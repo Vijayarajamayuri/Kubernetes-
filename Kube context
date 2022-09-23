@@ -1,0 +1,27 @@
+How does config file looks:
+.kube/config 
+``
+apiVersion: v1
+kind: Config
+preferences: {}
+
+clusters:
+- cluster:
+  name: development
+- cluster:
+  name: scratch
+
+users:
+- name: developer
+- name: experimenter
+
+contexts:
+- context:
+  name: dev-frontend
+- context:
+  name: dev-storage
+- context:
+  name: exp-scratch
+  ```
+  Remove clusters:
+  kubectl --kubeconfig=config-demo config unset clusters.<name>
